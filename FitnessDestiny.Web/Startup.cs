@@ -7,8 +7,6 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.AspNetCore.Rewrite;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -21,8 +19,7 @@
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
            //services.Configure<MvcOptions>(options =>
@@ -42,6 +39,21 @@
             {
                 facebookOptions.AppId = "133498467338842";
                 facebookOptions.AppSecret = "d99092f77500f68a934512bb8d8de75e";
+            })
+            .AddTwitter(twitterOptions =>
+            {
+                twitterOptions.ConsumerKey = "gNtJX30u9oLjmlP9RDF8UT7Eq";
+                twitterOptions.ConsumerSecret = "A53egx9Gskc9YTvypfsatLB02SJSxpaX46MZxqT7MeKDpuouaM";
+            })
+            .AddGoogle(googleOptions =>
+            {
+                googleOptions.ClientId = "101188243251-mlo7sjasjkjgi1m4qtc0ejak5upfnv3g.apps.googleusercontent.com";
+                googleOptions.ClientSecret = "RxbCYcyuwFmMKBM7JRpDDRNH";
+            })
+            .AddMicrosoftAccount(microsoftOptions =>
+            {
+                microsoftOptions.ClientId = "640ec936-81bb-4243-a818-be84911106dd";
+                microsoftOptions.ClientSecret = "yvkcohmPMT51434}VUNZ%}]";
             });
 
 
@@ -52,8 +64,7 @@
 
             services.AddMvc();
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseDatabaseMigration();
