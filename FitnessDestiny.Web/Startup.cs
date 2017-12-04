@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using FitnessDestiny.Web.Data;
+using FitnessDestiny.Data.Models;
+using FitnessDestiny.Data;
 using FitnessDestiny.Web.Models;
-using FitnessDestiny.Web.Services;
 
 namespace FitnessDestiny.Web
 {
@@ -34,7 +34,7 @@ namespace FitnessDestiny.Web
                 .AddDefaultTokenProviders();
 
             // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
+            //services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
         }
