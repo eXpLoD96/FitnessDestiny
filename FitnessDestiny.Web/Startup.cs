@@ -7,6 +7,8 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Rewrite;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -23,12 +25,25 @@
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           //services.Configure<MvcOptions>(options =>
+           //{
+           //    options.Filters.Add(new RequireHttpsAttribute());
+           //});
+
+
             services.AddDbContext<FitnessDestinyDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<FitnessDestinyDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = "133498467338842";
+                facebookOptions.AppSecret = "d99092f77500f68a934512bb8d8de75e";
+            });
+
 
             services.AddAutoMapper();
 
@@ -42,6 +57,7 @@
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseDatabaseMigration();
+            //var options = new RewriteOptions().AddRedirectToHttps();
 
             if (env.IsDevelopment())
             {
