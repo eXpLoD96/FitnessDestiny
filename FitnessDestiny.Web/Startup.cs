@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using FitnessDestiny.Data.Models;
-using FitnessDestiny.Data;
-using FitnessDestiny.Web.Models;
-
-namespace FitnessDestiny.Web
+﻿namespace FitnessDestiny.Web
 {
+    using AutoMapper;
+    using FitnessDestiny.Data;
+    using FitnessDestiny.Data.Models;
+    using FitnessDestiny.Web.Infrastructure.Extensions;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -33,6 +30,8 @@ namespace FitnessDestiny.Web
                 .AddEntityFrameworkStores<FitnessDestinyDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddAutoMapper();
+
             // Add application services.
             //services.AddTransient<IEmailSender, EmailSender>();
 
@@ -42,6 +41,8 @@ namespace FitnessDestiny.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseDatabaseMigration();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

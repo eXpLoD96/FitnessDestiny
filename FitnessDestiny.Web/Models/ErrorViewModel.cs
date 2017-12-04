@@ -1,5 +1,3 @@
-using System;
-
 namespace FitnessDestiny.Web.Models
 {
     public class ErrorViewModel

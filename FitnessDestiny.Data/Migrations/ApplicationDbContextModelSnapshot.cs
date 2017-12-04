@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
-using FitnessDestiny.Data;
-
-namespace FitnessDestiny.Data.Migrations
+﻿namespace FitnessDestiny.Data.Migrations
 {
+    using FitnessDestiny.Data;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Infrastructure;
+    using Microsoft.EntityFrameworkCore.Metadata;
+    using System;
+
     [DbContext(typeof(FitnessDestinyDbContext))]
     partial class FitnessDestinyDbContextModelSnapshot : ModelSnapshot
     {

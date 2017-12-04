@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FitnessDestiny.Web.Infrastructure.Mapper
+﻿namespace FitnessDestiny.Web.Infrastructure.Mapper
 {
-    interface IMapFrom
+    public interface IMapFrom<TModel>
     {
     }
 }

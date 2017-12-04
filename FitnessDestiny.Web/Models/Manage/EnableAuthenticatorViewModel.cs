@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FitnessDestiny.Web.Models.ManageViewModels
+﻿namespace FitnessDestiny.Web.Models.ManageViewModels
 {
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public class EnableAuthenticatorViewModel
     {
             [Required]

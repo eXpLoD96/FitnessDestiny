@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using FitnessDestiny.Data.Models;
-
-namespace FitnessDestiny.Data
+﻿namespace FitnessDestiny.Data
 {
+    using FitnessDestiny.Data.Models;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
+
     public class FitnessDestinyDbContext : IdentityDbContext<User>
     {
         public FitnessDestinyDbContext(DbContextOptions<FitnessDestinyDbContext> options)

@@ -11,3 +11,4 @@ C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDest
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Web\bin\Debug\netcoreapp2.0\FitnessDestiny.Data.pdb
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Web\obj\Debug\netcoreapp2.0\FitnessDestiny.Web.dll
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Web\obj\Debug\netcoreapp2.0\FitnessDestiny.Web.pdb
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
