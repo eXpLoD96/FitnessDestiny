@@ -1,6 +1,5 @@
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Web\obj\Debug\netcoreapp2.0\FitnessDestiny.Web.csprojResolveAssemblyReference.cache
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Web\obj\Debug\netcoreapp2.0\FitnessDestiny.Web.csproj.CoreCompileInputs.cache
-C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Web\obj\Debug\netcoreapp2.0\FitnessDestiny.Web.AssemblyInfoInputs.cache
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Web\obj\Debug\netcoreapp2.0\FitnessDestiny.Web.AssemblyInfo.cs
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Web\bin\Debug\netcoreapp2.0\FitnessDestiny.Web.deps.json
