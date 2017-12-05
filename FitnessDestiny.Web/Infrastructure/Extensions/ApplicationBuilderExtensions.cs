@@ -18,7 +18,7 @@
                 serviceScope.ServiceProvider.GetService<FitnessDestinyDbContext>().Database.Migrate();
                 var userManager = serviceScope.ServiceProvider.GetService<UserManager<User>>();
                 var roleManager = serviceScope.ServiceProvider.GetService<RoleManager<IdentityRole>>();
-
+                /*
                 Task
                     .Run(async () =>
                     {
@@ -62,7 +62,10 @@
                     })
                     .Wait();
             }
-            return app;
+            */
+                return app;
+            }
         }
     }
+
 }

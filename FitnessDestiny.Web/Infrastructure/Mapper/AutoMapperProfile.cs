@@ -1,6 +1,7 @@
 ﻿namespace FitnessDestiny.Web.Infrastructure.Mapper
 {
     using AutoMapper;
+    using FitnessDestiny.Core.Mapping;
     using System;
     using System.Linq;
 

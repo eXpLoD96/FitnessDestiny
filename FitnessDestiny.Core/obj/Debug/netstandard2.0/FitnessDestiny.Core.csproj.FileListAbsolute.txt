@@ -4,3 +4,15 @@ C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDest
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Core\obj\Debug\netstandard2.0\FitnessDestiny.Core.csproj.CoreCompileInputs.cache
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Core\obj\Debug\netstandard2.0\FitnessDestiny.Core.AssemblyInfoInputs.cache
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Core\obj\Debug\netstandard2.0\FitnessDestiny.Core.AssemblyInfo.cs
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Core\bin\Debug\netstandard2.0\FitnessDestiny.Core.deps.json
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Core\bin\Debug\netstandard2.0\FitnessDestiny.Core.dll
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Core\bin\Debug\netstandard2.0\FitnessDestiny.Core.pdb
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Core\obj\Debug\netstandard2.0\FitnessDestiny.Core.csprojResolveAssemblyReference.cache
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Core\obj\Debug\netstandard2.0\FitnessDestiny.Core.csproj.CoreCompileInputs.cache
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Core\obj\Debug\netstandard2.0\FitnessDestiny.Core.AssemblyInfoInputs.cache
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Core\obj\Debug\netstandard2.0\FitnessDestiny.Core.AssemblyInfo.cs
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Core\obj\Debug\netstandard2.0\FitnessDestiny.Core.dll
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Core\obj\Debug\netstandard2.0\FitnessDestiny.Core.pdb
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Core\bin\Debug\netstandard2.0\FitnessDestiny.Core.pdb
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Core\obj\Debug\netstandard2.0\FitnessDestiny.Core.dll
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Core\obj\Debug\netstandard2.0\FitnessDestiny.Core.pdb

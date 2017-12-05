@@ -4,3 +4,23 @@ C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDest
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.csproj.CoreCompileInputs.cache
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.AssemblyInfoInputs.cache
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.AssemblyInfo.cs
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Services.deps.json
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Services.dll
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Services.pdb
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Core.dll
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Data.dll
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Core.pdb
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Data.pdb
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.csprojResolveAssemblyReference.cache
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.csproj.CoreCompileInputs.cache
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.AssemblyInfoInputs.cache
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.AssemblyInfo.cs
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.dll
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.pdb
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Services.pdb
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Core.dll
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Data.dll
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Core.pdb
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Data.pdb
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.dll
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.pdb

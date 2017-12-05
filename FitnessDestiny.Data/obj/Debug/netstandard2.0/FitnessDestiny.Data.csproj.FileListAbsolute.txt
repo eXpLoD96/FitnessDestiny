@@ -7,3 +7,12 @@ C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDest
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Data\bin\Debug\netstandard2.0\FitnessDestiny.Data.pdb
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Data\obj\Debug\netstandard2.0\FitnessDestiny.Data.dll
 C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Data\obj\Debug\netstandard2.0\FitnessDestiny.Data.pdb
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Data\bin\Debug\netstandard2.0\FitnessDestiny.Data.deps.json
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Data\bin\Debug\netstandard2.0\FitnessDestiny.Data.dll
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Data\bin\Debug\netstandard2.0\FitnessDestiny.Data.pdb
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Data\obj\Debug\netstandard2.0\FitnessDestiny.Data.csprojResolveAssemblyReference.cache
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Data\obj\Debug\netstandard2.0\FitnessDestiny.Data.csproj.CoreCompileInputs.cache
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Data\obj\Debug\netstandard2.0\FitnessDestiny.Data.AssemblyInfoInputs.cache
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Data\obj\Debug\netstandard2.0\FitnessDestiny.Data.AssemblyInfo.cs
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Data\obj\Debug\netstandard2.0\FitnessDestiny.Data.dll
+C:\Users\eXpLoD\Desktop\eCommrce\FitnessDestiny\FitnessDestiny.Data\obj\Debug\netstandard2.0\FitnessDestiny.Data.pdb
