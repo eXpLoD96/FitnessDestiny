@@ -19,13 +19,13 @@
         }
 
         public IConfiguration Configuration { get; }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
-           //services.Configure<MvcOptions>(options =>
-           //{
-           //    options.Filters.Add(new RequireHttpsAttribute());
-           //});
+            //services.Configure<MvcOptions>(options =>
+            //{
+            //    options.Filters.Add(new RequireHttpsAttribute());
+            //});
 
 
             services.AddDbContext<FitnessDestinyDbContext>(options =>
@@ -70,7 +70,7 @@
 
             services.AddMvc();
         }
-        
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseDatabaseMigration();
@@ -91,6 +91,10 @@
             app.UseAuthentication();
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "areas",
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                 );
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
