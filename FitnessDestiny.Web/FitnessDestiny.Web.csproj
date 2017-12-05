@@ -24,7 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FitnessDestiny.Core\FitnessDestiny.Core.csproj" />
     <ProjectReference Include="..\FitnessDestiny.Data\FitnessDestiny.Data.csproj" />
+    <ProjectReference Include="..\FitnessDestiny.Services\FitnessDestiny.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

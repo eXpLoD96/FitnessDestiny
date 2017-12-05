@@ -1,4 +1,4 @@
-﻿namespace FitnessDestiny.Web.Infrastructure.Mapper
+﻿namespace FitnessDestiny.Core.Mapping
 {
     using AutoMapper;
 

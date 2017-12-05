@@ -1,0 +1,6 @@
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Services.deps.json
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\bin\Debug\netstandard2.0\FitnessDestiny.Services.dll
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.csprojResolveAssemblyReference.cache
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.csproj.CoreCompileInputs.cache
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.AssemblyInfoInputs.cache
+C:\Users\eXpLoD\Documents\Visual Studio 2017\Projects\FitnessDestiny\FitnessDestiny.Services\obj\Debug\netstandard2.0\FitnessDestiny.Services.AssemblyInfo.cs

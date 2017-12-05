@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessDestiny.Web", "FitnessDestiny.Web\FitnessDestiny.Web.csproj", "{A3207ECA-A259-44EB-A9AA-7676A78F7BC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessDestiny.Web", "FitnessDestiny.Web\FitnessDestiny.Web.csproj", "{A3207ECA-A259-44EB-A9AA-7676A78F7BC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessDestiny.Data", "FitnessDestiny.Data\FitnessDestiny.Data.csproj", "{AAE3CB81-50CE-4DD7-98E1-9DDAF8EDAC3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessDestiny.Data", "FitnessDestiny.Data\FitnessDestiny.Data.csproj", "{AAE3CB81-50CE-4DD7-98E1-9DDAF8EDAC3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessDestiny.Services", "FitnessDestiny.Services\FitnessDestiny.Services.csproj", "{06E7E5AD-1EE5-4557-A7B8-85BA1B95F8D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessDestiny.Core", "FitnessDestiny.Core\FitnessDestiny.Core.csproj", "{B4FB409A-AC0D-4E8E-8DA2-956C479CDE52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{AAE3CB81-50CE-4DD7-98E1-9DDAF8EDAC3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAE3CB81-50CE-4DD7-98E1-9DDAF8EDAC3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAE3CB81-50CE-4DD7-98E1-9DDAF8EDAC3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06E7E5AD-1EE5-4557-A7B8-85BA1B95F8D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06E7E5AD-1EE5-4557-A7B8-85BA1B95F8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06E7E5AD-1EE5-4557-A7B8-85BA1B95F8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06E7E5AD-1EE5-4557-A7B8-85BA1B95F8D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4FB409A-AC0D-4E8E-8DA2-956C479CDE52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4FB409A-AC0D-4E8E-8DA2-956C479CDE52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4FB409A-AC0D-4E8E-8DA2-956C479CDE52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4FB409A-AC0D-4E8E-8DA2-956C479CDE52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
