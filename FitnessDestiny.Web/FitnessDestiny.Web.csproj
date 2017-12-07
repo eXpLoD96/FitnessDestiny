@@ -5,6 +5,13 @@
     <UserSecretsId>aspnet-FitnessDestiny.Web-A99B9161-80E1-43D7-AF72-07CD2000BF85</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Areas\Blog\Data\**" />
+    <Content Remove="Areas\Blog\Data\**" />
+    <EmbeddedResource Remove="Areas\Blog\Data\**" />
+    <None Remove="Areas\Blog\Data\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
@@ -34,8 +41,6 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\" />
-    <Folder Include="Areas\Blog\Data\" />
-    <Folder Include="Areas\Blog\Views\" />
   </ItemGroup>
 
 </Project>

@@ -9,5 +9,9 @@
         Task<IEnumerable<ArticleListingServiceModel>> AllAsync(int page = 1);
 
         Task<int> TotalAsync();
+
+        Task<BlogArticleDetailsServiceModel> ById(int id);
+
+        Task CreateAsync(string title, string content, string authorId);
     }
 }
