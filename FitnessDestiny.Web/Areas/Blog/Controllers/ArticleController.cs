@@ -2,6 +2,7 @@
 {
     using FitnessDestiny.Blog.Services;
     using FitnessDestiny.Data.Models;
+    using FitnessDestiny.Services.Blog.Models;
     using FitnessDestiny.Services.Html;
     using FitnessDestiny.Web.Areas.Blog.Models;
     using FitnessDestiny.Web.Infrastructure.Extensions;
@@ -13,6 +14,7 @@
     using static WebConstants;
 
     [Area(BlogArea)]
+    [Authorize(Roles = BlogAuthor + "," + Administrator)]
     public class ArticleController : Controller
     {
         private readonly IArticleService articles;
@@ -29,7 +31,7 @@
             this.html = html;
         }
 
-
+        [AllowAnonymous]
         public async Task<IActionResult> Index(int page = 1)
         => View(new ArticleListingViewModel
         {
@@ -56,6 +58,15 @@
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
             => this.ViewOrNotFound(await this.articles.ById(id));
+
+        public IActionResult Delete(int id) => View(id);
+
+        [HttpPost]
+        public IActionResult Destroy(int id)
+        {
+            articles.Delete(id);
+            return RedirectToAction(nameof(Index));
+        }
 
 
     }

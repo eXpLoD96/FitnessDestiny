@@ -6,9 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Admin\Data\**" />
     <Compile Remove="Areas\Blog\Data\**" />
+    <Content Remove="Areas\Admin\Data\**" />
     <Content Remove="Areas\Blog\Data\**" />
+    <EmbeddedResource Remove="Areas\Admin\Data\**" />
     <EmbeddedResource Remove="Areas\Blog\Data\**" />
+    <None Remove="Areas\Admin\Data\**" />
     <None Remove="Areas\Blog\Data\**" />
   </ItemGroup>
 
@@ -34,13 +38,6 @@
     <ProjectReference Include="..\FitnessDestiny.Core\FitnessDestiny.Core.csproj" />
     <ProjectReference Include="..\FitnessDestiny.Data\FitnessDestiny.Data.csproj" />
     <ProjectReference Include="..\FitnessDestiny.Services\FitnessDestiny.Services.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\" />
   </ItemGroup>
 
 </Project>

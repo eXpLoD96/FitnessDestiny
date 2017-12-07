@@ -13,5 +13,7 @@
         Task<ArticleDetailsServiceModel> ById(int id);
 
         Task CreateAsync(string title, string content, string authorId);
+
+        bool Delete(int id);
     }
 }

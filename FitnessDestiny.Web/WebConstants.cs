@@ -9,8 +9,12 @@
                 
         public const string VipUser = "VipUser";
 
+        public const string AdminArea = "Admin";
         public const string BlogArea = "Blog";
 
         public const int PageSize = 20;
+
+        public const string TempDataSuccessMessageKey = "SuccessMessage";
+        public const string TempDataErrorMessageKey = "ErrorMessage";
     }
 }

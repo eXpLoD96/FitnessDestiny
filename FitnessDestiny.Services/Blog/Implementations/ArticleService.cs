@@ -51,6 +51,22 @@
             await this.db.SaveChangesAsync();
         }
 
+        public bool Delete(int id)
+        {
+            var articleToDelete = db.Articles.Where(a => a.Id == id).FirstOrDefault();
+
+            if(articleToDelete == null)
+            {
+                return false;
+            }
+
+            db.Articles.Remove(articleToDelete);
+            db.SaveChanges();
+            return true;
+        }
+                
+                
+
         public async Task<int> TotalAsync()
             => await this.db.Articles.CountAsync();
     }

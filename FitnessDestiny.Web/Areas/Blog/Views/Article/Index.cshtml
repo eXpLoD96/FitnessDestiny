@@ -5,14 +5,19 @@
 }
 
 <h2>@ViewData["Title"]</h2>
+@if (User.IsInRole("Administrator") || User.IsInRole("BlogAuthor"))
+{
 <div class="row">
     <div class="col-md-2">
         <a href="article/create/" class="btn btn-success">Create</a>
     </div>
     <br/>
+    <br/>
 </div>
+}
+
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-10">
         <ul class="list-group article-list">
             @foreach (var article in Model.Articles)
             {
@@ -22,9 +27,15 @@
                     <div>@article.ShortContent ... [<a asp-action="Details" asp-route-id="@article.Id" asp-route-title="@article.Title.ToFriendlyUrl()">Read More</a>]</div>
                     <small>published by @article.Author on @article.PublishDate.ToShortDateString()</small>
                 </li>
+                if (User.IsInRole("Administrator") || User.Identity.Name == article.Author)
+                {
+                    <a href="article/delete/@article.Id" class="btn btn-danger">Delete</a>
+                }
+
             }
         </ul>
     </div>
+    
 </div>
 
 @if (Model.TotalArticles > Model.Articles.Count())

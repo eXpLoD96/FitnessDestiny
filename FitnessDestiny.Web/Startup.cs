@@ -99,6 +99,10 @@
                     template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                  );
                 routes.MapRoute(
+                    name: "blog",
+                    template: "blog/articles/{id}/{title}",
+                    defaults: new { area = "Blog", controller = "Articles", action = "Details" });
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
