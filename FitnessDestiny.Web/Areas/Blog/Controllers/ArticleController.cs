@@ -4,7 +4,9 @@
     using FitnessDestiny.Data.Models;
     using FitnessDestiny.Services.Html;
     using FitnessDestiny.Web.Areas.Blog.Models;
+    using FitnessDestiny.Web.Infrastructure.Extensions;
     using FitnessDestiny.Web.Infrastructure.Filters;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
@@ -50,6 +52,11 @@
 
             return RedirectToAction(nameof(Index));
         }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(int id)
+            => this.ViewOrNotFound(await this.articles.ById(id));
+
 
     }
 }

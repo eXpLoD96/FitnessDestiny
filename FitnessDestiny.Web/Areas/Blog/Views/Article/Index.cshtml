@@ -5,7 +5,12 @@
 }
 
 <h2>@ViewData["Title"]</h2>
-
+<div class="row">
+    <div class="col-md-2">
+        <a href="article/create/" class="btn btn-success">Create</a>
+    </div>
+    <br/>
+</div>
 <div class="row">
     <div class="col-md-6">
         <ul class="list-group article-list">
@@ -14,6 +19,7 @@
                 <li class="list-group-item">
                     <a asp-action="Details" asp-route-id="@article.Id" asp-route-title="@article.Title.ToFriendlyUrl()">@article.Title</a>
                     <br />
+                    <div>@article.ShortContent ... [<a asp-action="Details" asp-route-id="@article.Id" asp-route-title="@article.Title.ToFriendlyUrl()">Read More</a>]</div>
                     <small>published by @article.Author on @article.PublishDate.ToShortDateString()</small>
                 </li>
             }
