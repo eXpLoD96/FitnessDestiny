@@ -40,4 +40,11 @@
     <ProjectReference Include="..\FitnessDestiny.Services\FitnessDestiny.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Store\Controllers\" />
+    <Folder Include="Areas\Store\Data\" />
+    <Folder Include="Areas\Store\Models\" />
+    <Folder Include="Areas\Store\Views\" />
+  </ItemGroup>
+
 </Project>

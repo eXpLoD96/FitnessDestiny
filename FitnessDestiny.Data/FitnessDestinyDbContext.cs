@@ -13,6 +13,8 @@
 
         public DbSet<Article> Articles { get; set; }
 
+        public DbSet<Supplement> Supplements { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
