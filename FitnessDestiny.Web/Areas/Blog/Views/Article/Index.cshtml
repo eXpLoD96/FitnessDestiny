@@ -29,6 +29,7 @@
                 </li>
                 if (User.IsInRole("Administrator") || User.Identity.Name == article.Author)
                 {
+                    <a href="article/edit/@article.Id" class="btn btn-danger">Edit</a>
                     <a href="article/delete/@article.Id" class="btn btn-danger">Delete</a>
                 }
 

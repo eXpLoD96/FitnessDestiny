@@ -59,6 +59,36 @@
         public async Task<IActionResult> Details(int id)
             => this.ViewOrNotFound(await this.articles.ById(id));
 
+        //[Authorize(Roles = Administrator)]
+        //public IActionResult Edit(ArticleEditServiceModel model) => View(model);
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var article = await this.articles.EditById(id);
+            //return this.View(await this.articles.EditById(id));
+            return this.View(new ArticleEditServiceModel
+            {
+                Title = article.Title,
+                Content = article.Content
+            });
+        }
+
+        [HttpPost]
+        [ValidateModelState]
+        public async Task<IActionResult> EditArticle(ArticleEditServiceModel parameter)
+        {
+            parameter.Title = this.html.Sanitize(parameter.Title);
+            parameter.Content = this.html.Sanitize(parameter.Content);
+
+            //var user = this.userManager.GetUserName(User.Identity.Name)
+            
+            if (User.IsInRole(Administrator))
+            {
+                await this.articles.EditAsync(parameter.Id, parameter.Title, parameter.Content);
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
         public IActionResult Delete(int id) => View(id);
         
         [HttpPost]

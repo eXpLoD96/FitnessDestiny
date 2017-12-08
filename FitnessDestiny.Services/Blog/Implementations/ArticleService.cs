@@ -50,6 +50,22 @@
 
             await this.db.SaveChangesAsync();
         }
+        
+        public async Task<bool> EditAsync(int id, string title, string content)
+        {
+            var article = await this.db.Articles.Where(a => a.Id == id).FirstOrDefaultAsync();
+
+            if (article == null)
+            {
+                return false;
+            }
+
+            article.Title = title;
+            article.Content = content;
+
+            await this.db.SaveChangesAsync();
+            return true;
+        }
 
         public bool Delete(int id)
         {
@@ -64,10 +80,25 @@
             this.db.SaveChanges();
             return true;
         }
-                
-                
+
 
         public async Task<int> TotalAsync()
             => await this.db.Articles.CountAsync();
+
+        public async Task<ArticleEditServiceModel> EditById(int id)
+         => await this.db
+            .Articles
+            .Where(a => a.Id == id)
+            .ProjectTo<ArticleEditServiceModel>()
+            .FirstOrDefaultAsync();
+        /*
+            return await this.db.Articles.Select(a => new ArticleEditServiceModel
+            {
+                Id = a.Id,
+                Title = a.Title,
+                Content = a.Content
+            }).FirstOrDefaultAsync();
+            
+            */
     }
 }
