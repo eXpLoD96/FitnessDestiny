@@ -1,11 +1,13 @@
-﻿namespace FitnessDestiny.Data.Models
+﻿using FitnessDestiny.Data.Models.Enums;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace FitnessDestiny.Web.Areas.Admin.Models.Store
 {
-    using FitnessDestiny.Data.Models.Enums;
-
-    public class Supplement
+    public class CreateSupplementFormModel
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         public string Description { get; set; }
@@ -19,8 +21,6 @@
         public decimal Price { get; set; }
 
         public int Quantity { get; set; }
-
-        public bool inStock { get; set; }
-
+        
     }
 }

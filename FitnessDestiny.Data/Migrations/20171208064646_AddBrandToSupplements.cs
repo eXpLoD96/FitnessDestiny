@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace FitnessDestiny.Data.Migrations
 {
-    public partial class SupplementsTable : Migration
+    public partial class AddBrandToSupplements : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -38,7 +38,6 @@ namespace FitnessDestiny.Data.Migrations
                 table: "AspNetUsers",
                 nullable: true);
                 
-
             migrationBuilder.CreateTable(
                 name: "Articles",
                 columns: table => new
@@ -61,13 +60,19 @@ namespace FitnessDestiny.Data.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
                 */
+            migrationBuilder.AddColumn<string>(
+            name: "Brand",
+            table: "Supplements",
+            nullable: true);
 
+            /*
             migrationBuilder.CreateTable(
                 name: "Supplements",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Brand = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Price = table.Column<decimal>(nullable: false),
@@ -79,7 +84,7 @@ namespace FitnessDestiny.Data.Migrations
                 {
                     table.PrimaryKey("PK_Supplements", x => x.Id);
                 });
-            /*
+            
             migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
                 table: "AspNetUsers",
@@ -98,7 +103,7 @@ namespace FitnessDestiny.Data.Migrations
                 name: "IX_Articles_AuthorId",
                 table: "Articles",
                 column: "AuthorId");
-            
+
             migrationBuilder.AddForeignKey(
                 name: "FK_AspNetUserTokens_AspNetUsers_UserId",
                 table: "AspNetUserTokens",
@@ -107,6 +112,7 @@ namespace FitnessDestiny.Data.Migrations
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
                 */
+                
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

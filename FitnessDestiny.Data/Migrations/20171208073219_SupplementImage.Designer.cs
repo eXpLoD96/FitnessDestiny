@@ -12,8 +12,8 @@ using System;
 namespace FitnessDestiny.Data.Migrations
 {
     [DbContext(typeof(FitnessDestinyDbContext))]
-    [Migration("20171208061029_SupplementsTable")]
-    partial class SupplementsTable
+    [Migration("20171208073219_SupplementImage")]
+    partial class SupplementImage
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,7 +51,11 @@ namespace FitnessDestiny.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Brand");
+
                     b.Property<string>("Description");
+
+                    b.Property<string>("ImageUrl");
 
                     b.Property<string>("Name");
 

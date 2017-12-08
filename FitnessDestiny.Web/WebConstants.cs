@@ -11,6 +11,7 @@
 
         public const string AdminArea = "Admin";
         public const string BlogArea = "Blog";
+        public const string StoreArea = "Store";
 
         public const int PageSize = 20;
 
