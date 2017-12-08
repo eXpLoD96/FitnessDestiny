@@ -60,11 +60,15 @@
             => this.ViewOrNotFound(await this.articles.ById(id));
 
         public IActionResult Delete(int id) => View(id);
-
+        
         [HttpPost]
         public IActionResult Destroy(int id)
         {
-            articles.Delete(id);
+            if (!this.articles.Delete(id))
+            {
+                return this.NotFound();
+            }
+
             return RedirectToAction(nameof(Index));
         }
 

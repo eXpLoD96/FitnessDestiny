@@ -53,15 +53,15 @@
 
         public bool Delete(int id)
         {
-            var articleToDelete = db.Articles.Where(a => a.Id == id).FirstOrDefault();
+            Article article = this.db.Articles.Find(id);
 
-            if(articleToDelete == null)
+            if (article == null)
             {
                 return false;
             }
 
-            db.Articles.Remove(articleToDelete);
-            db.SaveChanges();
+            this.db.Articles.Remove(article);
+            this.db.SaveChanges();
             return true;
         }
                 
