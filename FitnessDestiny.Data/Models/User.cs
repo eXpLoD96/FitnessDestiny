@@ -13,5 +13,9 @@
         public DateTime Birthdate { get; set; }
 
         public List<Article> Articles { get; set; } = new List<Article>();
+
+        public List<Program> ProgramsTrained{ get; set; } = new List<Program>();
+
+        public List<TraineeProgram> ProgramsEnrolled { get; set; } = new List<TraineeProgram>();
     }
 }

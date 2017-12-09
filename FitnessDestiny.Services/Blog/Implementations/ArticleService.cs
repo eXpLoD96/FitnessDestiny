@@ -86,11 +86,13 @@
             => await this.db.Articles.CountAsync();
 
         public async Task<ArticleEditServiceModel> EditById(int id)
-         => await this.db
-            .Articles
-            .Where(a => a.Id == id)
-            .ProjectTo<ArticleEditServiceModel>()
-            .FirstOrDefaultAsync();
+        => await this.db
+              .Articles
+              .Where(a => a.Id == id)
+              .ProjectTo<ArticleEditServiceModel>()
+              .FirstOrDefaultAsync();
+        
+
         /*
             return await this.db.Articles.Select(a => new ArticleEditServiceModel
             {

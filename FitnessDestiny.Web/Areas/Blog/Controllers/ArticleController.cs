@@ -75,17 +75,15 @@
 
         [HttpPost]
         [ValidateModelState]
-        public async Task<IActionResult> EditArticle(ArticleEditServiceModel parameter)
+        public async Task<IActionResult> EditArticle([FromForm]ArticleEditServiceModel parameter)
         {
             parameter.Title = this.html.Sanitize(parameter.Title);
             parameter.Content = this.html.Sanitize(parameter.Content);
 
             //var user = this.userManager.GetUserName(User.Identity.Name)
             
-            if (User.IsInRole(Administrator))
-            {
-                await this.articles.EditAsync(parameter.Id, parameter.Title, parameter.Content);
-            }
+            await this.articles.EditAsync(parameter.Id, parameter.Title, parameter.Content);
+            
             return RedirectToAction(nameof(Index));
         }
 
