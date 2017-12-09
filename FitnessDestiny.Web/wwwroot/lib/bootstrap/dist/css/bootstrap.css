@@ -3517,6 +3517,10 @@ tbody.collapse.in {
 .dropdown-toggle:focus {
   outline: 0;
 }
+
+div{
+    word-wrap: break-word;
+}
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -6755,3 +6759,6 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+#articleIndex{
+    word-wrap:break-word
+}

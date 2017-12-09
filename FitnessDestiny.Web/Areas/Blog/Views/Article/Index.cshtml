@@ -17,26 +17,25 @@
 }
 
 <div class="row">
-    <div class="col-md-10">
+@foreach (var article in Model.Articles)
+{
+    <div class="col-md-12">
         <ul class="list-group article-list">
-            @foreach (var article in Model.Articles)
-            {
                 <li class="list-group-item">
                     <a asp-action="Details" asp-route-id="@article.Id" asp-route-title="@article.Title.ToFriendlyUrl()">@article.Title</a>
                     <br />
-                    <div>@article.ShortContent ... [<a asp-action="Details" asp-route-id="@article.Id" asp-route-title="@article.Title.ToFriendlyUrl()">Read More</a>]</div>
+                    <div id="articleIndex">@article.ShortContent ... [<a asp-action="Details" asp-route-id="@article.Id" asp-route-title="@article.Title.ToFriendlyUrl()">Read More</a>]</div>
                     <small>published by @article.Author on @article.PublishDate.ToShortDateString()</small>
                 </li>
-                if (User.IsInRole("Administrator") || User.Identity.Name == article.Author)
+                @if (User.IsInRole("Administrator") || User.Identity.Name == article.Author)
                 {
                     <a href="article/edit/@article.Id" class="btn btn-danger">Edit</a>
                     <a href="article/delete/@article.Id" class="btn btn-danger">Delete</a>
                 }
-
-            }
         </ul>
     </div>
-    
+}
+
 </div>
 
 @if (Model.TotalArticles > Model.Articles.Count())
