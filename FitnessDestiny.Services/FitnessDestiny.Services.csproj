@@ -15,8 +15,4 @@
     <ProjectReference Include="..\FitnessDestiny.Data\FitnessDestiny.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Admin\Models\Store\" />
-  </ItemGroup>
-
 </Project>

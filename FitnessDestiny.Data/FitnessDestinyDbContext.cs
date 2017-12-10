@@ -20,6 +20,7 @@
         public DbSet<Program> Programs { get; set; }
 
         public DbSet<TraineeProgram> TraineePrograms {get; set;}
+        public object Where { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

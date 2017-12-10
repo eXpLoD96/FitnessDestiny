@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FitnessDestiny.Data.Models.Enums;
 using FitnessDestiny.Data;
 using FitnessDestiny.Data.Models;
+using System.Linq;
 
 namespace FitnessDestiny.Services.Admin.Implementations
 {
@@ -33,6 +34,23 @@ namespace FitnessDestiny.Services.Admin.Implementations
             this.db.Supplements.Add(supplement);
             await this.db.SaveChangesAsync();
             
+        }
+
+        public bool Delete(int id)
+        {
+            var supplement = this.db
+                .Supplements
+                .Find(id);
+
+            if(supplement == null)
+            {
+                return false;
+            }
+
+            this.db.Supplements.Remove(supplement);
+            db.SaveChanges();
+
+            return true;
         }
     }
 }
