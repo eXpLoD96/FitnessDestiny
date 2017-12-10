@@ -1,6 +1,7 @@
 ﻿namespace FitnessDestiny.Data.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using static DataConstants;
 
@@ -23,5 +24,9 @@
         public string AuthorId { get; set; }
 
         public User Author { get; set; }
+
+        public List<ArticleComment> Comments { get; set; } = new List<ArticleComment>();
+
+        public DateTime? LastCommentDate { get; set; }
     }
 }

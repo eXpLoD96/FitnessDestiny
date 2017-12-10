@@ -10,14 +10,16 @@
 
         Task<int> TotalAsync();
 
-        Task<ArticleDetailsServiceModel> ById(int id);
+        Task<ArticleDetailsServiceModel> ByIdAsync(int id);
 
-        Task<ArticleEditServiceModel> EditById(int id);
+        Task<ArticleEditServiceModel> EditByIdAsync(int id);
 
         Task CreateAsync(string title, string content, string authorId);
 
         Task<bool> EditAsync(int id, string title, string content);
 
         bool Delete(int id);
+
+        Task AddCommentAsync(int articleId, string comment, string userId);
     }
 }

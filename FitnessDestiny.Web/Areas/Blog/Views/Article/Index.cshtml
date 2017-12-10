@@ -24,7 +24,7 @@
                 <li class="list-group-item">
                     <a asp-action="Details" asp-route-id="@article.Id" asp-route-title="@article.Title.ToFriendlyUrl()">@article.Title</a>
                     <br />
-                    <div id="articleIndex">@article.ShortContent ... [<a asp-action="Details" asp-route-id="@article.Id" asp-route-title="@article.Title.ToFriendlyUrl()">Read More</a>]</div>
+                    <div class="articleIndex">@article.ShortContent ... [<a asp-action="Details" asp-route-id="@article.Id" asp-route-title="@article.Title.ToFriendlyUrl()">Read More</a>]</div>
                     <small>published by @article.Author on @article.PublishDate.ToShortDateString()</small>
                 </li>
                 @if (User.IsInRole("Administrator") || User.Identity.Name == article.Author)

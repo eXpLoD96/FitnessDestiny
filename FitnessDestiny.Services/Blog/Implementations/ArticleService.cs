@@ -29,7 +29,7 @@
                 .ProjectTo<ArticleListingServiceModel>()
                 .ToListAsync();
 
-        public async Task<ArticleDetailsServiceModel> ById(int id)
+        public async Task<ArticleDetailsServiceModel> ByIdAsync(int id)
             => await this.db
                 .Articles
                 .Where(a => a.Id == id)
@@ -85,22 +85,34 @@
         public async Task<int> TotalAsync()
             => await this.db.Articles.CountAsync();
 
-        public async Task<ArticleEditServiceModel> EditById(int id)
+        public async Task<ArticleEditServiceModel> EditByIdAsync(int id)
         => await this.db
               .Articles
               .Where(a => a.Id == id)
               .ProjectTo<ArticleEditServiceModel>()
               .FirstOrDefaultAsync();
-        
 
-        /*
-            return await this.db.Articles.Select(a => new ArticleEditServiceModel
+
+        public async Task AddCommentAsync(int articleId, string comment, string userId)
+        {
+            var article = await this.db
+                .Articles
+                .FindAsync(articleId);
+
+            var currentTime = DateTime.UtcNow;
+
+            var articleComment = new ArticleComment
             {
-                Id = a.Id,
-                Title = a.Title,
-                Content = a.Content
-            }).FirstOrDefaultAsync();
-            
-            */
+                ArticleId = articleId,
+                AuthorId = userId,
+                Content = comment,
+                PublishDate = currentTime
+            };
+
+            article.Comments.Add(articleComment);
+            article.LastCommentDate = currentTime;
+            await db.SaveChangesAsync();
+
+        }
     }
 }

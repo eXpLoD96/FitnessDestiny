@@ -57,14 +57,14 @@
 
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
-            => this.ViewOrNotFound(await this.articles.ById(id));
+            => this.ViewOrNotFound(await this.articles.ByIdAsync(id));
 
         //[Authorize(Roles = Administrator)]
         //public IActionResult Edit(ArticleEditServiceModel model) => View(model);
 
         public async Task<IActionResult> Edit(int id)
         {
-            var article = await this.articles.EditById(id);
+            var article = await this.articles.EditByIdAsync(id);
             //return this.View(await this.articles.EditById(id));
             return this.View(new ArticleEditServiceModel
             {
@@ -100,6 +100,26 @@
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Comment(int id, string comment)
+        {
+            var article = await this.articles.ByIdAsync(id);
+            if (article == null)
+            {
+                return BadRequest();
+            }
 
+            if (comment.Length < 5 || comment.Length > 200)
+            {
+                TempData.AddErrorMessage(CommentTextLengthErrorText);
+                return RedirectToAction(nameof(Details), new { id = id });
+            }
+
+            var userId = this.userManager.GetUserId(User);
+            await this.articles.AddCommentAsync(id, comment, userId);
+
+            return RedirectToAction(nameof(Details), new { id = id });
+        }
     }
 }

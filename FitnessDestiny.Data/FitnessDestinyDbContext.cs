@@ -15,8 +15,18 @@
 
         public DbSet<Supplement> Supplements { get; set; }
 
+        public DbSet<ArticleComment> Comments { get; set; }
+
+        public DbSet<Program> Programs { get; set; }
+
+        public DbSet<TraineeProgram> TraineePrograms {get; set;}
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<User>()
+                .HasIndex(u => u.UserName)
+                .IsUnique();
+
             builder
                 .Entity<TraineeProgram>()
                 .HasKey(st => new { st.ProgramId, st.TraineeId });
@@ -44,7 +54,17 @@
                 .HasOne(a => a.Author)
                 .WithMany(u => u.Articles)
                 .HasForeignKey(a => a.AuthorId);
-            
+
+            builder.Entity<Article>()
+                .HasMany(a => a.Comments)
+                .WithOne(c => c.Article)
+                .HasForeignKey(c => c.ArticleId);
+
+            builder.Entity<User>()
+                .HasMany(u => u.ArticleComments)
+                .WithOne(fc => fc.Author)
+                .HasForeignKey(fc => fc.AuthorId);
+
             base.OnModelCreating(builder);
         }
     }

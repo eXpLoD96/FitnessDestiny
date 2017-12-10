@@ -10,5 +10,8 @@
 
         public const int ProgramNameLength = 50;
         public const int ProgramDescriptionLength = 300;
+
+        public const int CommentMinLength = 5;
+        public const int CommentMaxLength = 800;
     }
 }

@@ -1,4 +1,8 @@
-﻿body {
+﻿.articleIndex {
+    word-wrap: break-word;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -34,6 +38,4 @@
     }
 }
 
-div#articleIndex {
-    word-wrap: break-word !important;
-}
+

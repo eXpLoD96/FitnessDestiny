@@ -17,5 +17,7 @@
 
         public const string TempDataSuccessMessageKey = "SuccessMessage";
         public const string TempDataErrorMessageKey = "ErrorMessage";
+
+        public const string CommentTextLengthErrorText = "Comment must be between 5 and 800 symbols";
     }
 }
