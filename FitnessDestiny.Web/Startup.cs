@@ -23,11 +23,6 @@
 
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.Configure<MvcOptions>(options =>
-            //{
-            //    options.Filters.Add(new RequireHttpsAttribute());
-            //});
-
 
             services.AddDbContext<FitnessDestinyDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -98,10 +93,12 @@
                     name: "areas",
                     template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                  );
+
                 routes.MapRoute(
                     name: "blog",
                     template: "blog/articles/{id}/{title}",
                     defaults: new { area = "Blog", controller = "Articles", action = "Details" });
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

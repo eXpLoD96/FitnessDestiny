@@ -11,5 +11,7 @@ namespace FitnessDestiny.Services.Store
         Task<IEnumerable<SupplementListingServiceModel>> AllAsync(int page = 1);
 
         Task<int> TotalAsync();
+
+        Task<SupplementDetailsServiceModel> ByIdAsync(int id);
     }
 }

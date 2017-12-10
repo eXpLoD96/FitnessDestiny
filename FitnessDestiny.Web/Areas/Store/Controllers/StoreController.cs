@@ -3,6 +3,7 @@
     using FitnessDestiny.Data;
     using FitnessDestiny.Services.Store;
     using FitnessDestiny.Web.Areas.Store.Models;
+    using FitnessDestiny.Web.Infrastructure.Extensions;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System;
@@ -31,6 +32,10 @@
             TotalSupplements = await this.store.TotalAsync(),
             CurrentPage = page
         });
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(int id)
+            => this.ViewOrNotFound(await this.store.ByIdAsync(id));
 
 
     }

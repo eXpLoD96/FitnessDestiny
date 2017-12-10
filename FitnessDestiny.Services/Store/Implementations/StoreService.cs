@@ -22,6 +22,7 @@ namespace FitnessDestiny.Services.Store.Implementations
             this.db = db;
         }
 
+
         public async Task<IEnumerable<SupplementListingServiceModel>> AllAsync(int page = 1)
         => await this.db
                 .Supplements
@@ -30,6 +31,14 @@ namespace FitnessDestiny.Services.Store.Implementations
                 .Take(PageSize)
                 .ProjectTo<SupplementListingServiceModel>()
                 .ToListAsync();
+
+        public async Task<SupplementDetailsServiceModel> ByIdAsync(int id)
+         => await this.db
+                .Supplements
+                .Where(s => s.Id == id)
+                .ProjectTo<SupplementDetailsServiceModel>()
+                .FirstOrDefaultAsync();
+        
 
         public async Task<int> TotalAsync() => await this.db.Supplements.CountAsync();
     }

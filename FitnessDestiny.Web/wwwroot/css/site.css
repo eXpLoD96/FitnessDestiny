@@ -1,4 +1,4 @@
-﻿.articleIndex {
+﻿.article#SupplementDetailsArticleIndex {
     word-wrap: break-word;
 }
 
@@ -29,7 +29,12 @@ body {
 #qrCode {
     margin: 15px;
 }
-
+/* 
+    Supplement Details CSS starts here
+*/
+/*
+    Supplement Details Ends Here
+*/
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */

@@ -35,5 +35,10 @@ namespace FitnessDestiny.Web.Areas.Admin.Controllers
 
             return RedirectToRoute("");
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+
+        }
     }
 }
