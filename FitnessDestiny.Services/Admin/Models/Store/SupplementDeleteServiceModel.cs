@@ -1,11 +1,8 @@
-﻿using FitnessDestiny.Core.Mapping;
-using FitnessDestiny.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FitnessDestiny.Services.Admin.Models.Store
+﻿namespace FitnessDestiny.Services.Admin.Models.Store
 {
+    using FitnessDestiny.Core.Mapping;
+    using FitnessDestiny.Data.Models;
+
     public class SupplementDeleteServiceModel : IMapFrom<Supplement>
     {
         public int Id { get; set; }

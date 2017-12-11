@@ -1,21 +1,16 @@
-﻿using FitnessDestiny.Data.Models;
-using FitnessDestiny.Services.Admin;
-using FitnessDestiny.Services.Admin.Models.Store;
-using FitnessDestiny.Services.Html;
-using FitnessDestiny.Services.Store;
-using FitnessDestiny.Web.Areas.Admin.Models.Store;
-using FitnessDestiny.Web.Areas.Store.Models;
-using FitnessDestiny.Web.Infrastructure.Extensions;
-using FitnessDestiny.Web.Infrastructure.Filters;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FitnessDestiny.Web.Areas.Admin.Controllers
+﻿namespace FitnessDestiny.Web.Areas.Admin.Controllers
 {
+    using FitnessDestiny.Services.Admin;
+    using FitnessDestiny.Services.Admin.Models.Store;
+    using FitnessDestiny.Services.Html;
+    using FitnessDestiny.Services.Store;
+    using FitnessDestiny.Web.Areas.Admin.Models.Store;
+    using FitnessDestiny.Web.Areas.Store.Models;
+    using FitnessDestiny.Web.Infrastructure.Filters;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
+
     public class StoreController : BaseAdminController
     {
         private readonly IAdminStoreService store;
@@ -47,11 +42,12 @@ namespace FitnessDestiny.Web.Areas.Admin.Controllers
         [ValidateModelState]
         public async Task<IActionResult> Create(CreateSupplementFormModel model)
         {
+            model.Name = this.html.Sanitize(model.Name);
             model.Description = this.html.Sanitize(model.Description);
-            
+
             await this.store.CreateAsync(model.Name, model.Description, model.Brand, model.ImageUrl, model.SupplementType, model.Price, model.Quantity);
 
-            return RedirectToRoute("");
+            return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Edit(int id)

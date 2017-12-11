@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FitnessDestiny.Data.Models
+﻿namespace FitnessDestiny.Data.Models
 {
     public class TraineeProgram
     {

@@ -14,7 +14,6 @@
     using static WebConstants;
 
     [Area(BlogArea)]
-    [Authorize(Roles = BlogAuthor + "," + Administrator)]
     public class ArticleController : Controller
     {
         private readonly IArticleService articles;
@@ -39,7 +38,8 @@
             TotalArticles = await this.articles.TotalAsync(),
             CurrentPage = page
         });
-
+        
+        [Authorize(Roles = BlogAuthor + "," + Administrator)]
         public IActionResult Create() => View();
 
         [HttpPost]
@@ -99,9 +99,9 @@
 
             return RedirectToAction(nameof(Index));
         }
-
-        [Authorize]
+        
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Comment(int id, string comment)
         {
             var article = await this.articles.ByIdAsync(id);

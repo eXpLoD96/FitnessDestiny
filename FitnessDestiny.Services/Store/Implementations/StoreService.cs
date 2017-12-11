@@ -1,15 +1,11 @@
-﻿
-
-namespace FitnessDestiny.Services.Store.Implementations
+﻿namespace FitnessDestiny.Services.Store.Implementations
 {
     using AutoMapper.QueryableExtensions;
     using FitnessDestiny.Data;
     using FitnessDestiny.Services.Store.Models;
     using Microsoft.EntityFrameworkCore;
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
     using static FitnessDestiny.Services.ServiceConstants;
 

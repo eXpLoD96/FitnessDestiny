@@ -1,11 +1,8 @@
-﻿using FitnessDestiny.Core.Mapping;
-using FitnessDestiny.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FitnessDestiny.Services.Admin.Models
+﻿namespace FitnessDestiny.Services.Admin.Models
 {
+    using FitnessDestiny.Core.Mapping;
+    using FitnessDestiny.Data.Models;
+
     public class AdminUserListingServiceModel : IMapFrom<User>
     {
         public string Id { get; set; }

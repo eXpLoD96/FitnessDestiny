@@ -1,18 +1,16 @@
-﻿using FitnessDestiny.Data.Models;
-using FitnessDestiny.Services.Admin;
-using FitnessDestiny.Web.Areas.Admin.Models.Users;
-using FitnessDestiny.Web.Infrastructure.Extensions;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FitnessDestiny.Web.Areas.Admin.Controllers
+﻿namespace FitnessDestiny.Web.Areas.Admin.Controllers
 {
+    using FitnessDestiny.Data.Models;
+    using FitnessDestiny.Services.Admin;
+    using FitnessDestiny.Web.Areas.Admin.Models.Users;
+    using FitnessDestiny.Web.Infrastructure.Extensions;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using Microsoft.EntityFrameworkCore;
+    using System.Linq;
+    using System.Threading.Tasks;
+
     public class UsersController : BaseAdminController
     {
         private readonly IAdminUserService users;

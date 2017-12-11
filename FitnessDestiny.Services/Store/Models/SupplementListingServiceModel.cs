@@ -1,6 +1,4 @@
-﻿
-
-namespace FitnessDestiny.Services.Store.Models
+﻿namespace FitnessDestiny.Services.Store.Models
 {
     using AutoMapper;
     using FitnessDestiny.Core.Mapping;

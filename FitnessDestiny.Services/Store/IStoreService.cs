@@ -1,11 +1,9 @@
-﻿using FitnessDestiny.Services.Store.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FitnessDestiny.Services.Store
+﻿namespace FitnessDestiny.Services.Store
 {
+    using FitnessDestiny.Services.Store.Models;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     public interface IStoreService
     {
         Task<IEnumerable<SupplementListingServiceModel>> AllAsync(int page = 1);

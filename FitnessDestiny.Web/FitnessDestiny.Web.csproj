@@ -40,4 +40,8 @@
     <ProjectReference Include="..\FitnessDestiny.Services\FitnessDestiny.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\styles\" />
+  </ItemGroup>
+
 </Project>

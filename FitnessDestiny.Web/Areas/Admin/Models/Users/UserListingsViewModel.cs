@@ -1,12 +1,9 @@
-﻿using FitnessDestiny.Services.Admin.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FitnessDestiny.Web.Areas.Admin.Models.Users
+﻿namespace FitnessDestiny.Web.Areas.Admin.Models.Users
 {
+    using FitnessDestiny.Services.Admin.Models;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using System.Collections.Generic;
+
     public class UserListingsViewModel
     {
         public IEnumerable<AdminUserListingServiceModel> Users { get; set; }

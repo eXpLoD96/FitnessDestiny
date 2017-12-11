@@ -13,5 +13,10 @@
 
         public const int CommentMinLength = 5;
         public const int CommentMaxLength = 800;
+
+        public const int SupplementNameMaxLength = 50;
+        public const int SupplementNameMinLength = 5;
+        public const int SupplementDescriptionMinLength = 10;
+        public const int SupplementDescriptionMaxLength = 250;
     }
 }

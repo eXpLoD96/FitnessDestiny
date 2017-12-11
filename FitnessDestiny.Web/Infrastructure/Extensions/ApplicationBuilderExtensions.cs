@@ -2,6 +2,7 @@
 {
     using FitnessDestiny.Data;
     using FitnessDestiny.Data.Models;
+    using FitnessDestiny.Data.Models.Enums;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
@@ -101,6 +102,57 @@
                                 );
                                 await db.SaveChangesAsync();
                             }).Wait();
+                }
+
+                if (!db.Supplements.Any())
+                {
+                    Task
+                        .Run(async () =>
+                        {
+                            await db.Supplements.AddRangeAsync(
+                                new Supplement
+                                {
+                                    Name = "Whey protein powder",
+                                    Description = @"Whey protein is a mixture of globular proteins isolated from whey, the liquid material created as a by-product of cheese production.",
+                                    Brand = "On nutrition",
+                                    ImageUrl = "http://www.gnc.com/dw/image/v2/BBLB_PRD/on/demandware.static/-/Sites-master-catalog-gnc/default/dwda4f9cec/hi-res/350260_1.jpg?sw=2000&sh=2000&sm=fit",
+                                    Price = 60,
+                                    Quantity = 10,
+                                    SupplementType = SupplementType.Protein
+                                },
+                                new Supplement
+                                {
+                                    Name = "Creatine",
+                                    Description = @"99.9% Pure Unflavored Creatine with No Fillers or Additives to Support Strength and Power",
+                                    Brand = "On nutrition",
+                                    ImageUrl = "https://www.supplementworld.co.za/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/o/p/optimum-nutrition-micronised-creatine-powder.jpg",
+                                    Price = 20,
+                                    Quantity = 18,
+                                    SupplementType = SupplementType.Creatine
+                                },
+                                new Supplement
+                                {
+                                    Name = "Preworkout",
+                                    Description = "An Advanced Pre-Workout Formulated for Anyone Seeking Increased Energy and Focus",
+                                    Brand = "Cellucor",
+                                    ImageUrl = "https://store.bbcomcdn.com/images/store/skuimage/sku_CELLU4620197/image_skuCELLU4620197_largeImage_X_450_white.jpg",
+                                    Price = 40,
+                                    Quantity = 8,
+                                    SupplementType = SupplementType.Preworkout
+                                },
+                                new Supplement
+                                {
+                                    Name = "True-Mass Gainer",
+                                    Description = "Ultra Premium Muscle Mass Gainer",
+                                    Brand = "BSN",
+                                    ImageUrl = "https://store.bbcomcdn.com/images/store/skuimage/sku_BSN030/image_skuBSN030_largeImage_X_450_white.jpg",
+                                    Price = 36,
+                                    Quantity = 3,
+                                    SupplementType = SupplementType.Gainer
+                                }
+                                );
+                            await db.SaveChangesAsync();
+                        }).Wait();
                 }
                 
             }

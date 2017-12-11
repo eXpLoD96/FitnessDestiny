@@ -23,10 +23,10 @@
     ]
   },
   {
-    "outputFileName": "wwwroot/css/SupplementDetails.css",
+    "outputFileName": "wwwroot/css/supplementdetails.css",
     // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
-      "wwwroot/css/Articles.css"
+      "wwwroot/css/supplementdetails.css"
     ]
   },
   {

@@ -1,10 +1,10 @@
-﻿using AutoMapper;
-using FitnessDestiny.Core.Mapping;
-using FitnessDestiny.Data.Models;
-using System;
-
-namespace FitnessDestiny.Services.Blog.Models
+﻿namespace FitnessDestiny.Services.Blog.Models
 {
+    using AutoMapper;
+    using FitnessDestiny.Core.Mapping;
+    using FitnessDestiny.Data.Models;
+    using System;
+
     public class ArticleDeleteServiceModel : IMapFrom<Article>, IHaveCustomMapping
     {
         public int Id { get; set; }

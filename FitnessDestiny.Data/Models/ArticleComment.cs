@@ -1,11 +1,7 @@
-﻿
-
-namespace FitnessDestiny.Data.Models
+﻿namespace FitnessDestiny.Data.Models
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Text;
     using static DataConstants;
 
     public class ArticleComment

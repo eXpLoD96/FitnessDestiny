@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FitnessDestiny.Services.Admin.Models;
-using FitnessDestiny.Data;
-using AutoMapper.QueryableExtensions;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
-
-namespace FitnessDestiny.Services.Admin.Implementations
+﻿namespace FitnessDestiny.Services.Admin.Implementations
 {
+    using AutoMapper.QueryableExtensions;
+    using FitnessDestiny.Data;
+    using FitnessDestiny.Services.Admin.Models;
+    using Microsoft.EntityFrameworkCore;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     public class AdminUserService : IAdminUserService
     {
         private FitnessDestinyDbContext db;

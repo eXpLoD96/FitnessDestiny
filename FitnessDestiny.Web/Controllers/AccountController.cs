@@ -216,7 +216,9 @@
                 {
                     UserName = model.Username,
                     Email = model.Email,
-                    Birthdate = model.Birthdate
+                    Birthdate = model.Birthdate,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName
                 };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

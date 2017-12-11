@@ -1,12 +1,9 @@
-﻿using FitnessDestiny.Data.Models.Enums;
-using FitnessDestiny.Services.Admin.Models.Store;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FitnessDestiny.Services.Admin
+﻿namespace FitnessDestiny.Services.Admin
 {
+    using FitnessDestiny.Data.Models.Enums;
+    using FitnessDestiny.Services.Admin.Models.Store;
+    using System.Threading.Tasks;
+
     public interface IAdminStoreService
     {
         Task CreateAsync(string name, string description, string brand, string imageUrl, SupplementType supplementType, decimal price, int quantity);
@@ -16,5 +13,7 @@ namespace FitnessDestiny.Services.Admin
         Task<SupplementEditServiceModel> EditByIdAsync(int id);
 
         Task<bool> EditAsync(int id, string name, string description, string brand, string imageUrl, SupplementType supplementType, decimal price, int quantity, bool inStock);
+        
     }
+
 }

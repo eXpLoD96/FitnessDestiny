@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using FitnessDestiny.Data.Models.Enums;
-using FitnessDestiny.Data;
-using FitnessDestiny.Data.Models;
-using System.Linq;
-using AutoMapper.QueryableExtensions;
-using FitnessDestiny.Services.Admin.Models.Store;
-using Microsoft.EntityFrameworkCore;
-
-namespace FitnessDestiny.Services.Admin.Implementations
+﻿namespace FitnessDestiny.Services.Admin.Implementations
 {
+    using AutoMapper.QueryableExtensions;
+    using FitnessDestiny.Data;
+    using FitnessDestiny.Data.Models;
+    using FitnessDestiny.Data.Models.Enums;
+    using FitnessDestiny.Services.Admin.Models.Store;
+    using Microsoft.EntityFrameworkCore;
+    using System.Linq;
+    using System.Threading.Tasks;
+
     public class AdminStoreService : IAdminStoreService
     {
         private readonly FitnessDestinyDbContext db;

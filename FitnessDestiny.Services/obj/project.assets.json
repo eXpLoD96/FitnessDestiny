@@ -5923,6 +5923,7 @@
   },
   "packageFolders": {
     "C:\\Users\\eXpLoD\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -5938,11 +5939,13 @@
       "outputPath": "C:\\Users\\eXpLoD\\Documents\\Visual Studio 2017\\Projects\\FitnessDestiny\\FitnessDestiny.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\eXpLoD\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -5972,23 +5975,23 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[6.2.1, )"
+          },
+          "HtmlSanitizer": {
+            "target": "Package",
+            "version": "[4.0.181, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
-            "version": "2.0.1"
+            "version": "[2.0.1, )"
           },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
-          },
-          "AutoMapper": {
-            "target": "Package",
-            "version": "6.2.1"
-          },
-          "HtmlSanitizer": {
-            "target": "Package",
-            "version": "4.0.181"
           }
         },
         "imports": [

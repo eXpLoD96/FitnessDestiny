@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FitnessDestiny.Services
+﻿namespace FitnessDestiny.Services
 {
     public class ServiceConstants
     {

@@ -1,5 +1,4 @@
-﻿
-namespace FitnessDestiny.Data.Models
+﻿namespace FitnessDestiny.Data.Models
 {
     using System;
     using System.Collections.Generic;

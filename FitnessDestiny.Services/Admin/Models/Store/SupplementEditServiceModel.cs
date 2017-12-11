@@ -1,12 +1,9 @@
-﻿using FitnessDestiny.Core.Mapping;
-using FitnessDestiny.Data.Models;
-using FitnessDestiny.Data.Models.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FitnessDestiny.Services.Admin.Models.Store
+﻿namespace FitnessDestiny.Services.Admin.Models.Store
 {
+    using FitnessDestiny.Core.Mapping;
+    using FitnessDestiny.Data.Models;
+    using FitnessDestiny.Data.Models.Enums;
+
     public class SupplementEditServiceModel : IMapFrom<Supplement>
     {
         public int Id { get; set; }

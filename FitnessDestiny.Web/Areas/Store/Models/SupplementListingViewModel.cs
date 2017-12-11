@@ -3,8 +3,6 @@
     using FitnessDestiny.Services.Store.Models;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
     using static FitnessDestiny.Services.ServiceConstants;
 
     public class SupplementListingViewModel

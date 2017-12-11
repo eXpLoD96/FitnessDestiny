@@ -12,15 +12,9 @@
 
 <div class="wrapper">
     <div class="desc">
-        <h1>Ecommerce product list/grid</h1>
-        <p>Simple html/css  ecommerce product grid with a hover effect.</p>
+        <h1>Our products</h1>
+        <p>Here you can view our supplements catalog</p>
 
-        <div class="todo">
-            <span>TODO list:</span>
-            <ul>
-                <li>Make it responsive folk!</li>
-            </ul>
-        </div>
         <div class="content">
             <!-- content here -->
             <div class="product-grid product-grid--flexbox">
@@ -37,9 +31,8 @@
                                 <div class="product-grid__extend-wrapper">
                                     <div class="product-grid__extend">
                                         <p class="product-grid__description">@supplement.Description</p>
+                                        <a asp-area="Store" asp-controller="Store" asp-action="Details" asp-route-id="@supplement.Id" asp-route-title="@supplement.Name.ToFriendlyUrl()" class="btn btn-success">Details</a>
                                         <span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>
-                                        <span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span>
-                                        <a asp-action="Details" asp-route-id="@supplement.Id" asp-route-title="@supplement.Description.ToFriendlyUrl()">@supplement.Name</a>
                                         <br />
                                     </div>
                                 </div>

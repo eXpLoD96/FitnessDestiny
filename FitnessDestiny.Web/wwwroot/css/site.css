@@ -2,6 +2,14 @@
     word-wrap: break-word;
 }
 
+div#home {
+    position: relative;
+    word-wrap: break-word;
+    margin: 20px;
+    font-size: x-large;
+    color: white;
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
