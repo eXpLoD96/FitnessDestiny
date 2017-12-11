@@ -1,0 +1,62 @@
+﻿@model SupplementEditServiceModel
+
+@{
+    ViewData["Title"] = "Edit Supplement";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-area="Admin" asp-controller="Store" asp-action="EditSupplement" method="post">
+            <input type="hidden" asp-for="Id" class="form-control" />
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <input asp-for="Description" required class="form-control" />
+                <span asp-validation-for="Description" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Brand"></label>
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SupplementType"></label>
+                <input asp-for="SupplementType" class="form-control" />
+                <span asp-validation-for="SupplementType" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InStock"></label>
+                <input asp-for="InStock" class="form-control" />
+                <span asp-validation-for="InStock" class="form-text text-danger"></span>
+            </div>
+            <a asp-area="Admin" asp-controller="Store" asp-action="EditSupplement" class="btn btn-default">Back</a>
+            <button type="submit" formmethod="post" class="btn btn-success">Edit Supplement</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

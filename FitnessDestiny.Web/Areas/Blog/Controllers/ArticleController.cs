@@ -65,7 +65,7 @@
         public async Task<IActionResult> Edit(int id)
         {
             var article = await this.articles.EditByIdAsync(id);
-            //return this.View(await this.articles.EditById(id));
+
             return this.View(new ArticleEditServiceModel
             {
                 Title = article.Title,

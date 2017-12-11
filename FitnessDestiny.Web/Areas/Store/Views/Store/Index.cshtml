@@ -2,21 +2,53 @@
 @{
     ViewData["Title"] = "Index";
 }
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/store.css" />
+    </environment>
+</head>
 
-<h2>Index</h2>
-<div class="row">
-    <div class="col-md-6">
-        <ul class="list-group article-list">
-            @foreach (var supplement in Model.Supplements)
+<div class="wrapper">
+    <div class="desc">
+        <h1>Ecommerce product list/grid</h1>
+        <p>Simple html/css  ecommerce product grid with a hover effect.</p>
+
+        <div class="todo">
+            <span>TODO list:</span>
+            <ul>
+                <li>Make it responsive folk!</li>
+            </ul>
+        </div>
+        <div class="content">
+            <!-- content here -->
+            <div class="product-grid product-grid--flexbox">
+                <div class="product-grid__wrapper">
+                    @foreach (var supplement in Model.Supplements)
             {
-                <li class="list-group-item">
-                    <a asp-action="Details" asp-route-id="@supplement.Id" asp-route-title="@supplement.Description.ToFriendlyUrl()">@supplement.Name</a>
-                    <br />
-                    <small>@supplement.Description</small>
-                    <small>Supplement by @supplement.Brand</small>
-                </li>
-            }
-        </ul>
+                        <div class="product-grid__product-wrapper">
+                            <div class="product-grid__product">
+                                <div class="product-grid__img-wrapper">
+                                    <img src="https://images.apple.com/euro/macbook/a/screens/specs/images/finish_silver_large.jpg" alt="Img" class="product-grid__img" />
+                                </div>
+                                <span class="product-grid__title">@supplement.Name</span>
+                                <span class="product-grid__price">@supplement.Price</span>
+                                <div class="product-grid__extend-wrapper">
+                                    <div class="product-grid__extend">
+                                        <p class="product-grid__description">@supplement.Description</p>
+                                        <span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>
+                                        <span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span>
+                                        <a asp-action="Details" asp-route-id="@supplement.Id" asp-route-title="@supplement.Description.ToFriendlyUrl()">@supplement.Name</a>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

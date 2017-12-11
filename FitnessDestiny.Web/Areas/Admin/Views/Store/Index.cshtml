@@ -15,7 +15,7 @@
                     <small>@supplement.Description</small>
                     <small>Supplement by @supplement.Brand</small>
                 </li>
-                <a asp-area="Admin" asp-controller="Store" asp-action="Edit" class="btn btn-danger">Edit</a>
+                <a asp-area="Admin" asp-controller="Store" asp-action="Edit" asp-route-id="@supplement.Id" class="btn btn-danger">Edit</a>
                 <a asp-area="Admin" asp-controller="Store" asp-action="Delete" asp-route-id="@supplement.Id" class="btn btn-danger">Delete</a>
             }
         </ul>

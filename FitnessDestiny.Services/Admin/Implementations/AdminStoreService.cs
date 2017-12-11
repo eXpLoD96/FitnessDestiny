@@ -6,6 +6,9 @@ using FitnessDestiny.Data.Models.Enums;
 using FitnessDestiny.Data;
 using FitnessDestiny.Data.Models;
 using System.Linq;
+using AutoMapper.QueryableExtensions;
+using FitnessDestiny.Services.Admin.Models.Store;
+using Microsoft.EntityFrameworkCore;
 
 namespace FitnessDestiny.Services.Admin.Implementations
 {
@@ -34,6 +37,36 @@ namespace FitnessDestiny.Services.Admin.Implementations
             this.db.Supplements.Add(supplement);
             await this.db.SaveChangesAsync();
             
+        }
+
+        public async Task<SupplementEditServiceModel> EditByIdAsync(int id)
+          => await this.db
+            .Supplements
+            .Where(s => s.Id == id)
+            .ProjectTo<SupplementEditServiceModel>()
+            .FirstOrDefaultAsync();
+
+        public async Task<bool> EditAsync(int id, string name, string description, string brand,
+            string imageUrl, SupplementType supplementType, decimal price, int quantity, bool inStock)
+        {
+            var supplement = await this.db.Supplements.Where(a => a.Id == id).FirstOrDefaultAsync();
+
+            if (supplement == null)
+            {
+                return false;
+            }
+
+            supplement.Name = name;
+            supplement.Description = description;
+            supplement.Brand = brand;
+            supplement.ImageUrl = imageUrl;
+            supplement.SupplementType = supplementType;
+            supplement.Price = price;
+            supplement.Quantity = quantity;
+            supplement.inStock = inStock;
+
+            await this.db.SaveChangesAsync();
+            return true;
         }
 
         public bool Delete(int id)
