@@ -1,6 +1,7 @@
 ﻿namespace FitnessDestiny.Web.Controllers
 {
     using FitnessDestiny.Blog.Services;
+    using FitnessDestiny.Services;
     using FitnessDestiny.Services.Store;
     using FitnessDestiny.Web.Models;
     using FitnessDestiny.Web.Models.Home;
@@ -12,13 +13,16 @@
     {
         private readonly IStoreService supplements;
         private readonly IArticleService articles;
+        private readonly IUserService users;
 
         public HomeController(
             IStoreService supplements,
-            IArticleService articles)
+            IArticleService articles,
+            IUserService users)
         {
             this.supplements = supplements;
             this.articles = articles;
+            this.users = users;
         }
 
         public IActionResult Index()
@@ -60,6 +64,11 @@
             if (model.SearchInSupplements)
             {
                 viewModel.Supplements = await this.supplements.FindAsync(model.SearchText);
+            }
+
+            if (model.SearchInUsers)
+            {
+                viewModel.Users = await this.users.FindAsync(model.SearchText);
             }
 
             return View(viewModel);
