@@ -15,4 +15,5 @@
         [Display(Name = "Search In Articles")]
         public bool SearchInArticles { get; set; } = true;
     }
+
 }

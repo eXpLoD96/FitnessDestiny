@@ -18,4 +18,5 @@
 
         public string SearchText { get; set; }
     }
+
 }
