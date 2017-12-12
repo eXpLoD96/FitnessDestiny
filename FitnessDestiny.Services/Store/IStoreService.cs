@@ -8,6 +8,8 @@
     {
         Task<IEnumerable<SupplementListingServiceModel>> AllAsync(int page = 1);
 
+        Task<IEnumerable<SupplementListingServiceModel>> FindAsync(string searchText);
+
         Task<int> TotalAsync();
 
         Task<SupplementDetailsServiceModel> ByIdAsync(int id);

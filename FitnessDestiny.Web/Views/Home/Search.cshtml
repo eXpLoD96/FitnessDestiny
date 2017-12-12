@@ -1,0 +1,38 @@
+﻿@model SearchViewModel
+
+@{
+    ViewData["Title"] = $"Search Results For {Model.SearchText}";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model.Articles.Any())
+{
+    <h3>Found Articles</h3>
+
+    <div class="row course-listings">
+        @await Html.PartialAsync("_ArticlesListingPartial", Model.Articles)
+    </div>
+}
+else
+{
+    <h3>No Articles to show.</h3>
+}
+
+<br />
+
+@if (Model.Supplements.Any())
+{
+<h3>Found Supplements</h3>
+
+    <ul>
+        @foreach (var supplement in Model.Supplements)
+        {
+            <li><a asp-area="Store" asp-controller="Store" asp-action="Details" asp-route-id="@supplement.Id">@supplement.Name - @supplement.Brand Supplements</a></li>
+        }
+    </ul>
+}
+else
+{
+    <h3>No Supplements to show.</h3>
+}

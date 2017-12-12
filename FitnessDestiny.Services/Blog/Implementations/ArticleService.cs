@@ -29,6 +29,19 @@
                 .ProjectTo<ArticleListingServiceModel>()
                 .ToListAsync();
 
+
+        public async Task<IEnumerable<ArticleListingServiceModel>> FindAsync(string searchText)
+        {
+            searchText = searchText ?? string.Empty;
+
+            return await this.db
+                .Articles
+                .OrderByDescending(c => c.Id)
+                .Where(c => c.Title.ToLower().Contains(searchText.ToLower()))
+                .ProjectTo<ArticleListingServiceModel>()
+                .ToListAsync();
+        }
+
         public async Task<ArticleDetailsServiceModel> ByIdAsync(int id)
             => await this.db
                 .Articles
@@ -114,5 +127,6 @@
             await db.SaveChangesAsync();
 
         }
+
     }
 }

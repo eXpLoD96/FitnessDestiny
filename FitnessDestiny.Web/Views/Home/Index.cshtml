@@ -1,4 +1,5 @@
-﻿@{
+﻿@model SearchFormModel
+@{
     ViewData["Title"] = "Home Page";
 }
 <head>
@@ -96,5 +97,24 @@
         how to properly apply it in a real-world setting. As such, we are ruthlessly dedicated to keeping up-to-date with the latest and best research and teaching you how
         to integrate it with the best in-the-trenches practices.</strong>
     </div>
+</div>
+
+<div class="row">
+    <form asp-action="Search">
+        <div class="col-md-6">
+            <input asp-for="SearchText" class="form-control" placeholder="Search..." />
+        </div>
+        <div class="col-md-2">
+            <input asp-for="SearchInArticles" />
+            <label asp-for="SearchInArticles"></label>
+        </div>
+        <div class="col-md-2">
+            <input asp-for="SearchInSupplements" />
+            <label asp-for="SearchInSupplements"></label>
+        </div>
+        <div class="col-md-2">
+            <input type="submit" class="btn btn-default pull-right" value="Search" />
+        </div>
+    </form>
 </div>
 
