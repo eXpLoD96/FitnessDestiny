@@ -1,0 +1,39 @@
+﻿@model ProgramListingViewModel
+
+@{
+    ViewData["Title"] = "Programs";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    @foreach (var program in Model.Programs)
+    {
+        <div class="col-md-12">
+            <ul class="list-group article-list">
+                <li class="list-group-item">
+                    <a asp-controller="Programs" asp-action="Details" asp-route-id="@program.Id" asp-route-title="@program.Name.ToFriendlyUrl()">@program.Name</a>
+                    <br />
+                    <small>Trained by @program.Trainer starts on @program.StartDate.ToShortDateString()</small>
+                </li>
+            </ul>
+        </div>
+    }
+</div>
+
+@if (Model.TotalPrograms > Model.Programs.Count())
+{
+    <ul class="pagination">
+        <li class="@(Model.CurrentPage == 1 ? "disabled" : string.Empty)">
+            <a asp-route-page="@Model.PreviousPage"
+               aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="@(Model.CurrentPage == Model.TotalPages ? "disabled" : string.Empty)">
+            <a asp-route-page="@Model.NextPage"
+               aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+}
