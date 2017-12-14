@@ -30,7 +30,8 @@
                         {
                             adminName,
                             WebConstants.BlogAuthor,
-                            WebConstants.VipUser
+                            WebConstants.VipUser,
+                            WebConstants.Trainer
                         };
 
                         foreach (var role in roles)

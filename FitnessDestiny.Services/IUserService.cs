@@ -7,5 +7,7 @@
     public interface IUserService
     {
         Task<IEnumerable<UserListingServiceModel>> FindAsync(string searchText);
+
+        Task<UserProfileServiceModel> ProfileAsync(string username);
     }
 }

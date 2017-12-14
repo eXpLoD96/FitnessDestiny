@@ -9,7 +9,7 @@
         [Display(Name = "Search In Users")]
         public bool SearchInUsers { get; set; } = true;
 
-        [Display(Name = "Search In Supplements")]
+        [Display(Name = "Search In Store")]
         public bool SearchInSupplements { get; set; } = true;
 
         [Display(Name = "Search In Articles")]

@@ -52,6 +52,9 @@
             {
                 Username = user.UserName,
                 Email = user.Email,
+                Birthdate = user.Birthdate,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,
                 StatusMessage = StatusMessage

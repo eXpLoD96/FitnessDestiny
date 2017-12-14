@@ -57,10 +57,15 @@
             return View(model);
         }
 
-        [Authorize]
+        [Authorize(Roles = WebConstants.Administrator + "," + WebConstants.VipUser)]
         [HttpPost]
         public async Task<IActionResult> SignUp(int id)
         {
+            if(!User.IsInRole(WebConstants.VipUser) || !User.IsInRole(WebConstants.Administrator))
+            {
+                TempData.AddErrorMessage($"You need to be a VIP user to sign up to a program!");
+            }
+
             var userId = this.userManager.GetUserId(User);
 
             var success = await this.programs.SignUpUserAsync(id, userId);
@@ -75,7 +80,7 @@
             return RedirectToAction(nameof(Details), new { id });
         }
 
-        [Authorize]
+        [Authorize(Roles = WebConstants.Administrator + "," + WebConstants.VipUser)]
         [HttpPost]
         public async Task<IActionResult> SignOut(int id)
         {

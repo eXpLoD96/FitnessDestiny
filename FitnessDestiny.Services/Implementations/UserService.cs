@@ -7,6 +7,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+
     class UserService : IUserService
     {
         private readonly FitnessDestinyDbContext db;
@@ -27,5 +28,12 @@
                 .ProjectTo<UserListingServiceModel>()
                 .ToListAsync();
         }
+
+        public async Task<UserProfileServiceModel> ProfileAsync(string id)
+        => await this.db
+                .Users
+                .Where(u => u.Id == id)
+                .ProjectTo<UserProfileServiceModel>(new { userId = id })
+                .FirstOrDefaultAsync();
     }
 }

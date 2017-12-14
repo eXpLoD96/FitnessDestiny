@@ -1,0 +1,64 @@
+﻿@model UserProfileServiceModel
+
+@{
+    ViewData["Title"] = $"{Model.UserName} Profile";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>@Model.UserName - @Model.Birthdate.ToShortDateString()</h3>
+
+@if (Model.UserName == User.Identity.Name)
+{
+    <a asp-controller="Manage" asp-action="Index" class="btn btn-default">Edit Profile</a>
+    <br />
+    <br />
+}
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Program Name</th>
+                <th>Program Description</th>
+                <th>Trainer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var article in Model.Articles)
+        {
+            <tr>
+                <td>
+                    <a asp-area="Blog" asp-controller="Article" asp-action="Details" asp-route-id="@article.Id">@article.Title</a>
+                </td>
+                <td>@(article.Content)</td>
+                <td>
+                    @(article.Author == null ? "No author" : article.Author)
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Program Name</th>
+            <th>Program Description</th>
+            <th>Trainer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var program in Model.Programs)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Programs" asp-action="Details" asp-route-id="@program.Id">@program.Name</a>
+                </td>
+                <td>@(program.Description)</td>
+                <td>
+                    @(program.Trainer == null ? "No trainer" : program.Trainer.UserName)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

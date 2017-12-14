@@ -28,7 +28,7 @@ namespace FitnessDestiny.Web.Areas.Admin.Controllers
         public async Task<IActionResult> Create()
             => View(new AddProgramFormModel
             {
-                StartDate = DateTime.UtcNow,
+                StartDate = DateTime.UtcNow.AddDays(7),
                 EndDate = DateTime.UtcNow.AddDays(30),
                 Trainers = await this.GetTrainers()
             });
@@ -57,7 +57,7 @@ namespace FitnessDestiny.Web.Areas.Admin.Controllers
 
         private async Task<IEnumerable<SelectListItem>> GetTrainers()
         {
-            var trainers = await this.userManager.GetUsersInRoleAsync(WebConstants.VipUser);
+            var trainers = await this.userManager.GetUsersInRoleAsync(WebConstants.Trainer);
 
             var trainerListItems = trainers
                 .Select(t => new SelectListItem
