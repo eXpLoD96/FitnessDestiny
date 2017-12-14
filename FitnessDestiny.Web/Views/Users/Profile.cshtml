@@ -17,9 +17,9 @@
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>Program Name</th>
-                <th>Program Description</th>
-                <th>Trainer</th>
+                <th>Article Title</th>
+                <th>Article Description</th>
+                <th>Author</th>
             </tr>
         </thead>
         <tbody>
@@ -29,7 +29,7 @@
                 <td>
                     <a asp-area="Blog" asp-controller="Article" asp-action="Details" asp-route-id="@article.Id">@article.Title</a>
                 </td>
-                <td>@(article.Content)</td>
+                <td>@(article.Content.Substring(0, 50))...</td>
                 <td>
                     @(article.Author == null ? "No author" : article.Author)
                 </td>
