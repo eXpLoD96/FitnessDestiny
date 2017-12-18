@@ -43,6 +43,7 @@
         public IActionResult Create() => View();
 
         [HttpPost]
+        [Authorize(Roles = BlogAuthor + "," + Administrator)]
         [ValidateModelState]
         public async Task<IActionResult> Create(PublishArticleFormModel model)
         {
@@ -77,9 +78,10 @@
         [ValidateModelState]
         public async Task<IActionResult> EditArticle([FromForm]ArticleEditServiceModel parameter)
         {
+            
             parameter.Title = this.html.Sanitize(parameter.Title);
             parameter.Content = this.html.Sanitize(parameter.Content);
-
+            
             //var user = this.userManager.GetUserName(User.Identity.Name)
             
             await this.articles.EditAsync(parameter.Id, parameter.Title, parameter.Content);

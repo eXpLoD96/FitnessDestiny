@@ -6,7 +6,8 @@
 
 <h2>@ViewData["Title"]</h2>
 
-
+@if (User.Identity.Name == Model.User)
+{
 <div class="row">
     <div class="col-md-4">
         <form asp-controller="Article" asp-action="EditArticle" method="post"> 
@@ -27,6 +28,12 @@
         </form>
     </div>
 </div>
+}
+else
+{
+  <h3>You are not the author of this article</h3>
+
+}
 
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")

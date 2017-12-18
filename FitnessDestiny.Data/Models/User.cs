@@ -14,12 +14,14 @@
 
         public List<Article> Articles { get; set; } = new List<Article>();
 
-        public List<Program> ProgramsTrained{ get; set; } = new List<Program>();
+        public List<Program> ProgramsTrained { get; set; } = new List<Program>();
 
         public List<TraineeProgram> ProgramsEnrolled { get; set; } = new List<TraineeProgram>();
 
 
         public List<ArticleComment> ArticleComments { get; set; } = new List<ArticleComment>();
+
+        public List<Order> Orders { get; set; } = new List<Order>();
 
     }
 }

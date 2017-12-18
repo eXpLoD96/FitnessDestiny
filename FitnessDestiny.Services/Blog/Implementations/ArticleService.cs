@@ -5,6 +5,7 @@
     using FitnessDestiny.Data;
     using FitnessDestiny.Data.Models;
     using FitnessDestiny.Services.Blog.Models;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using System;
     using System.Collections.Generic;
@@ -14,7 +15,7 @@
 
     public class ArticleService : IArticleService
     {
-        public readonly FitnessDestinyDbContext db;
+        private readonly FitnessDestinyDbContext db;
 
         public ArticleService(FitnessDestinyDbContext db)
         {

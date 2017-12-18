@@ -20,7 +20,7 @@
         [MaxLength(ArticleContentMaxLength)]
         public string Content { get; set; }
        
-        public User User { get; set; }
+        public string User { get; set; }
 
         public void ConfigureMapping(Profile mapper)
         => mapper

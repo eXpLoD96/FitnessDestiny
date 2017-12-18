@@ -3,6 +3,8 @@
     using AutoMapper;
     using FitnessDestiny.Data;
     using FitnessDestiny.Data.Models;
+    using FitnessDestiny.Services;
+    using FitnessDestiny.Services.Implementations;
     using FitnessDestiny.Web.Infrastructure.Extensions;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -62,7 +64,10 @@
 
             services.AddAutoMapper();
             services.AddDomainServices();
+            //services.AddSingleton<IShoppingCartManager, ShoppingCartManager>();
             services.AddRouting(routing => routing.LowercaseUrls = true);
+            services.AddSession();
+
             services.AddMvc(options =>
             {
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
@@ -87,6 +92,7 @@
 
             app.UseStaticFiles();
             app.UseAuthentication();
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

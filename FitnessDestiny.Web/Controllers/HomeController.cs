@@ -27,6 +27,7 @@
 
         public IActionResult Index()
         {
+            //this.HttpContext.Session
             return View();
         }
 

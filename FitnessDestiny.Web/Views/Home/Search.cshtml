@@ -45,7 +45,7 @@ else
     <ul>
         @foreach (var user in Model.Users)
         {
-            <li><a asp-controller="Users" asp-action="Profile" asp-route-username="@user.Username">@user.Name - @user.Programs Programs</a></li>
+            <li><a asp-controller="Users" asp-action="Profile" asp-route-username="@user.Username">@user.Username - @user.Programs Programs</a></li>
         }
     </ul>
 }

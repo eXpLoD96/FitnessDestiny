@@ -98,6 +98,30 @@
                 }
             }
 
+            var firstNameIsChanged = model.FirstName != user.FirstName;
+            var lastNameIsChanged = model.LastName != user.LastName;
+            var birthdateIsChanged = model.Birthdate != user.Birthdate;
+
+            if (firstNameIsChanged)
+            {
+                user.FirstName = model.FirstName;
+            }
+
+            if (lastNameIsChanged)
+            {
+                user.LastName = model.LastName;
+            }
+
+            if (birthdateIsChanged)
+            {
+                user.Birthdate = model.Birthdate;
+            }
+
+            if (firstNameIsChanged || lastNameIsChanged || birthdateIsChanged)
+            {
+                await this._userManager.UpdateAsync(user);
+            }
+
             StatusMessage = "Your profile has been updated";
             return RedirectToAction(nameof(Index));
         }

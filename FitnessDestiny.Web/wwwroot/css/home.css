@@ -18,6 +18,10 @@ body {
     padding: 1px;
 }
 
+div#HomeSearch{
+    color: white
+}
+
 h1 {
     color: white
 }

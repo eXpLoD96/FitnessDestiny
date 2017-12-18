@@ -15,6 +15,7 @@
         public void ConfigureMapping(Profile mapper)
             => mapper
                 .CreateMap<User, UserListingServiceModel>()
+            .ForMember(u => u.Username, cfg => cfg.MapFrom(us => us.UserName))
                 .ForMember(u => u.Programs, cfg => cfg.MapFrom(u => u.ProgramsEnrolled.Count));
     }
 }
