@@ -1,6 +1,7 @@
 ﻿using FitnessDestiny.Data.Models;
 using FitnessDestiny.Services.Admin;
 using FitnessDestiny.Web.Areas.Admin.Models.Programs;
+using FitnessDestiny.Web.Controllers;
 using FitnessDestiny.Web.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +29,7 @@ namespace FitnessDestiny.Web.Areas.Admin.Controllers
         public async Task<IActionResult> Create()
             => View(new AddProgramFormModel
             {
-                StartDate = DateTime.UtcNow.AddDays(7),
+                StartDate = DateTime.UtcNow,
                 EndDate = DateTime.UtcNow.AddDays(30),
                 Trainers = await this.GetTrainers()
             });
@@ -52,7 +53,9 @@ namespace FitnessDestiny.Web.Areas.Admin.Controllers
 
             TempData.AddSuccessMessage($"Program {model.Name} created successfully!");
 
-            return RedirectToRoute("");
+            return RedirectToAction(nameof(HomeController.Index),
+                "Home",
+                new { area = string.Empty });
         }
 
         private async Task<IEnumerable<SelectListItem>> GetTrainers()

@@ -21,6 +21,8 @@
 
         public DbSet<TraineeProgram> TraineePrograms {get; set;}
 
+        public DbSet<Order> Orders { get; set; }
+
         public object Where { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)

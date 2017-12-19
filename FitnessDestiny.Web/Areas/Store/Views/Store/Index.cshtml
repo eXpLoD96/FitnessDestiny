@@ -32,8 +32,7 @@
                                     <div class="product-grid__extend">
                                         <p class="product-grid__description">@supplement.Description</p>
                                         <a asp-area="Store" asp-controller="Store" asp-action="Details" asp-route-id="@supplement.Id" asp-route-title="@supplement.Name.ToFriendlyUrl()" class="btn btn-success">Details</a>
-                                        <a asp-area="" asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-id="@supplement.Id" class="product-grid__btn product-grid__add-to-cart">Add</a>
-                                        <span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>
+                                        <a asp-area="" asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-id="@supplement.Id" class="product-grid__btn product-grid__add-to-cart">Add To Cart</a>
                                         <br />
                                     </div>
                                 </div>

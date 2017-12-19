@@ -17,6 +17,7 @@
         {
             Tests.Initialize();
         }
+        
 
         [Fact]
         public async Task FindAsyncShouldReturnCorrectResultWithFilterAndOrder()
