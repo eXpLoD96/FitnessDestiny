@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace FitnessDestiny.Data.Migrations
 {
-    public partial class OrderTable : Migration
+    public partial class OrdersTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -61,8 +61,9 @@ namespace FitnessDestiny.Data.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
                 */
+                /*
             migrationBuilder.CreateTable(
-                name: "Order",
+                name: "Orders",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -72,14 +73,15 @@ namespace FitnessDestiny.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Order", x => x.Id);
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Order_AspNetUsers_UserId",
+                        name: "FK_Orders_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
+                */
             /*
             migrationBuilder.CreateTable(
                 name: "Programs",
@@ -155,6 +157,7 @@ namespace FitnessDestiny.Data.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
                 */
+                /*
             migrationBuilder.CreateTable(
                 name: "OrderItem",
                 columns: table => new
@@ -170,12 +173,12 @@ namespace FitnessDestiny.Data.Migrations
                 {
                     table.PrimaryKey("PK_OrderItem", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_OrderItem_Order_OrderId",
+                        name: "FK_OrderItem_Orders_OrderId",
                         column: x => x.OrderId,
-                        principalTable: "Order",
+                        principalTable: "Orders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
+                }); */
             /*
             migrationBuilder.CreateTable(
                 name: "TraineePrograms",
@@ -236,16 +239,19 @@ namespace FitnessDestiny.Data.Migrations
                 name: "IX_Comments_AuthorId",
                 table: "Comments",
                 column: "AuthorId");
+                *
                 */
-            migrationBuilder.CreateIndex(
-                name: "IX_Order_UserId",
-                table: "Order",
-                column: "UserId");
-
+                /*
             migrationBuilder.CreateIndex(
                 name: "IX_OrderItem_OrderId",
                 table: "OrderItem",
                 column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_UserId",
+                table: "Orders",
+                column: "UserId");
+                */
             /*
             migrationBuilder.CreateIndex(
                 name: "IX_Programs_TrainerId",
@@ -289,7 +295,7 @@ namespace FitnessDestiny.Data.Migrations
                 name: "Articles");
 
             migrationBuilder.DropTable(
-                name: "Order");
+                name: "Orders");
 
             migrationBuilder.DropTable(
                 name: "Programs");

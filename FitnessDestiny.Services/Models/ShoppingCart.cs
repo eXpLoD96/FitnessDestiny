@@ -40,7 +40,11 @@
             var cartItem = this.items.FirstOrDefault(i => i.SupplementId == supplementId);
             if(cartItem != null)
             {
-                this.items.Remove(cartItem);
+                cartItem.Quantity--;
+                if(cartItem.Quantity == 0)
+                {
+                    this.items.Remove(cartItem);
+                }
             }
         }
 

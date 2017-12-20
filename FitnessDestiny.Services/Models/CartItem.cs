@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FitnessDestiny.Services.Models
 {
-    public class CartItem : IMapFrom<OrderItem>
+    public class CartItem
     {
         public int SupplementId { get; set; }
 

@@ -64,7 +64,7 @@
 
             services.AddAutoMapper();
             services.AddDomainServices();
-            //services.AddSingleton<IShoppingCartManager, ShoppingCartManager>();
+            services.AddSingleton<IShoppingCartManager, ShoppingCartManager>();
             services.AddRouting(routing => routing.LowercaseUrls = true);
             services.AddSession();
 

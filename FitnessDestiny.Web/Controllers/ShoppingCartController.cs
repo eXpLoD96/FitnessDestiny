@@ -53,6 +53,15 @@ namespace FitnessDestiny.Web.Controllers
             return RedirectToAction(nameof(Items));
         }
 
+        public IActionResult RemoveFromCart(int id)
+        {
+            var shoppingCartId = this.HttpContext.Session.GetShoppingCartId();
+
+            this.shoppingCartManager.RemoveFromCart(shoppingCartId, id);
+
+            return RedirectToAction(nameof(Items));
+        }
+
         [Authorize]
         public IActionResult FinishOrder()
         {
@@ -84,6 +93,14 @@ namespace FitnessDestiny.Web.Controllers
             shoppingCartManager.Clear(shoppingCartId);
 
             return RedirectToAction(nameof(HomeController.Index), "Home");
+        }
+
+        public IActionResult ConfirmOrder()
+        {
+            var shoppingCartId = this.HttpContext.Session.GetShoppingCartId();
+            var items = this.shoppingCartManager.GetItems(shoppingCartId);
+
+            return this.View();
         }
 
 

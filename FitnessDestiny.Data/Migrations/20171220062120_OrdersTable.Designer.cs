@@ -12,8 +12,8 @@ using System;
 namespace FitnessDestiny.Data.Migrations
 {
     [DbContext(typeof(FitnessDestinyDbContext))]
-    [Migration("20171218095937_OrderTable")]
-    partial class OrderTable
+    [Migration("20171220062120_OrdersTable")]
+    partial class OrdersTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -85,7 +85,7 @@ namespace FitnessDestiny.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("FitnessDestiny.Data.Models.OrderItem", b =>
