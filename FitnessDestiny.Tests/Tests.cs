@@ -17,6 +17,7 @@
             }
             else
             {
+                //testsInitialized = false;
                 return true;
             }
         }
