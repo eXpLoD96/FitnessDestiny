@@ -12,10 +12,9 @@ using System;
 namespace FitnessDestiny.Data.Migrations
 {
     [DbContext(typeof(FitnessDestinyDbContext))]
-    [Migration("20171208073219_SupplementImage")]
-    partial class SupplementImage
+    partial class FitnessDestinyDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,6 +32,8 @@ namespace FitnessDestiny.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(25000);
 
+                    b.Property<DateTime?>("LastCommentDate");
+
                     b.Property<DateTime>("PublishDate");
 
                     b.Property<string>("Title")
@@ -46,18 +47,116 @@ namespace FitnessDestiny.Data.Migrations
                     b.ToTable("Articles");
                 });
 
+            modelBuilder.Entity("FitnessDestiny.Data.Models.ArticleComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ArticleId");
+
+                    b.Property<string>("AuthorId");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasMaxLength(800);
+
+                    b.Property<DateTime>("PublishDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId");
+
+                    b.HasIndex("AuthorId");
+
+                    b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("FitnessDestiny.Data.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<decimal>("TotalPrice");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("FitnessDestiny.Data.Models.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("OrderId");
+
+                    b.Property<int>("Quantity");
+
+                    b.Property<int>("SupplementId");
+
+                    b.Property<decimal>("SupplementPrice");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderItem");
+                });
+
+            modelBuilder.Entity("FitnessDestiny.Data.Models.Program", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CurrentClientsNumber");
+
+                    b.Property<int>("DaysPerWeekTraining");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(300);
+
+                    b.Property<DateTime>("EndDate");
+
+                    b.Property<int>("MaxClientsNumber");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("StartDate");
+
+                    b.Property<string>("TrainerId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TrainerId");
+
+                    b.ToTable("Programs");
+                });
+
             modelBuilder.Entity("FitnessDestiny.Data.Models.Supplement", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Brand");
+                    b.Property<string>("Brand")
+                        .IsRequired();
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(250);
 
-                    b.Property<string>("ImageUrl");
+                    b.Property<string>("ImageUrl")
+                        .IsRequired();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.Property<decimal>("Price");
 
@@ -70,6 +169,19 @@ namespace FitnessDestiny.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Supplements");
+                });
+
+            modelBuilder.Entity("FitnessDestiny.Data.Models.TraineeProgram", b =>
+                {
+                    b.Property<int>("ProgramId");
+
+                    b.Property<string>("TraineeId");
+
+                    b.HasKey("ProgramId", "TraineeId");
+
+                    b.HasIndex("TraineeId");
+
+                    b.ToTable("TraineePrograms");
                 });
 
             modelBuilder.Entity("FitnessDestiny.Data.Models.User", b =>
@@ -125,6 +237,10 @@ namespace FitnessDestiny.Data.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("UserName")
+                        .IsUnique()
+                        .HasFilter("[UserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -242,6 +358,53 @@ namespace FitnessDestiny.Data.Migrations
                     b.HasOne("FitnessDestiny.Data.Models.User", "Author")
                         .WithMany("Articles")
                         .HasForeignKey("AuthorId");
+                });
+
+            modelBuilder.Entity("FitnessDestiny.Data.Models.ArticleComment", b =>
+                {
+                    b.HasOne("FitnessDestiny.Data.Models.Article", "Article")
+                        .WithMany("Comments")
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("FitnessDestiny.Data.Models.User", "Author")
+                        .WithMany("ArticleComments")
+                        .HasForeignKey("AuthorId");
+                });
+
+            modelBuilder.Entity("FitnessDestiny.Data.Models.Order", b =>
+                {
+                    b.HasOne("FitnessDestiny.Data.Models.User", "User")
+                        .WithMany("Orders")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("FitnessDestiny.Data.Models.OrderItem", b =>
+                {
+                    b.HasOne("FitnessDestiny.Data.Models.Order", "Order")
+                        .WithMany("Items")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("FitnessDestiny.Data.Models.Program", b =>
+                {
+                    b.HasOne("FitnessDestiny.Data.Models.User", "Trainer")
+                        .WithMany("ProgramsTrained")
+                        .HasForeignKey("TrainerId");
+                });
+
+            modelBuilder.Entity("FitnessDestiny.Data.Models.TraineeProgram", b =>
+                {
+                    b.HasOne("FitnessDestiny.Data.Models.Program", "Program")
+                        .WithMany("Clients")
+                        .HasForeignKey("ProgramId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("FitnessDestiny.Data.Models.User", "Trainee")
+                        .WithMany("ProgramsEnrolled")
+                        .HasForeignKey("TraineeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

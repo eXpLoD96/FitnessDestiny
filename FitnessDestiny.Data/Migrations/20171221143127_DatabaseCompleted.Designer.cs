@@ -12,8 +12,8 @@ using System;
 namespace FitnessDestiny.Data.Migrations
 {
     [DbContext(typeof(FitnessDestinyDbContext))]
-    [Migration("20171220062120_OrdersTable")]
-    partial class OrdersTable
+    [Migration("20171221143127_DatabaseCompleted")]
+    partial class DatabaseCompleted
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
